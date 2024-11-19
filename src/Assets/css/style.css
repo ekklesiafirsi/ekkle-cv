@@ -81,6 +81,7 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  margin-top: 20px;
 }
 
 ul {
@@ -221,6 +222,7 @@ body.light-theme {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 30px;
 }
 
 /* .nav__img {
@@ -229,8 +231,10 @@ body.light-theme {
 } */
 
 .nav__logo {
-  color: var(--title-color);
+  color: #6C42EB;
   font-weight: var(--font-semibold);
+  margin-top: 20px;
+  
 }
 
 @media screen and (max-width: 767px) {
@@ -269,6 +273,7 @@ body.light-theme {
 
 .nav__name {
   font-size: var(--tiny-font-size);
+  margin-top: 20px;
   /*display: none;  Minimalist design, hidden labels */
 }
 
@@ -775,6 +780,7 @@ body.light-theme {
   }
   .home__buttons {
     flex-direction: column;
+    margin-top: 20px  ;
   }
   .home__handle {
     width: 150px;
