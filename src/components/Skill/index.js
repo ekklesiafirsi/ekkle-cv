@@ -1,8 +1,33 @@
+import { getDatabase, ref, onValue } from "firebase/database";
+import { useEffect, useState } from "react";
 const Skill = () => {
+
+  const [edu, setEdu] = useState({});
+  const [exp, setExp] = useState({})
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const db = getDatabase();
+    const eduRef = ref(db, "edu");
+    const expRef = ref(db, "exp");
+
+    setLoading(true);
+    onValue(eduRef, (snapshot) => {
+      const data = snapshot.val();
+      setEdu(data);
+      setLoading(false);
+    });
+    onValue(expRef,(snapshot)=>{
+      const data = snapshot.val();
+      setExp(data);
+      setLoading(false);
+    })
+
+  }, []);
     return (
         <div>
         <section className="skills section" id="skills">
-          <h2 className="section__title">Education</h2>
+          <h2 className="section__title">Education & Experience</h2>
           <div className="skills__container container grid">
             <div className="skills__content">
               <h3 className="skills__title">Education</h3>
@@ -11,26 +36,21 @@ const Skill = () => {
                   <div className="skills__data">
                     <i className="bx bx-badge-check" />
                     <div>
-                      <h3 className="skills__name">SEKOLAH DASAR
-                      SD GMIM AERGALE</h3>
+                      <h3 className="skills__name">{edu.sd}</h3>
                 
                     </div>
                   </div>
                   <div className="skills__data">
                     <i className="bx bx-badge-check" />
                     <div>
-                      <h3 className="skills__name">SEKOLAH MENENGAH PERTAMA
-SMP KATOLIK STELLA MARIS
-TOMOHON</h3>
+                      <h3 className="skills__name">{edu.smp}</h3>
                 
                     </div>
                   </div>
                   <div className="skills__data">
                     <i className="bx bx-badge-check" />
                     <div>
-                      <h3 className="skills__name">SEKOLAH MENENGAH ATAS
-SMA KR. EBEN HAEZAR
-MANADO</h3>
+                      <h3 className="skills__name">{edu.sma}</h3>
                 
                     </div>
                   </div>
@@ -44,14 +64,23 @@ MANADO</h3>
                   <div className="skills__data">
                     <i className="bx bx-badge-check" />
                     <div>
-                      <h3 className="skills__name">OSIS SMP Katolik Stella Maris Tomohon</h3>
+                      <h3 className="skills__name">{exp.exp1}</h3>
                       {/* <span class="skills__level">Intermediate</span> */}
                     </div>
                   </div>
                   <div className="skills__data">
                     <i className="bx bx-badge-check" />
                     <div>
-                      <h3 className="skills__name">Putri Intelegensia Remaja Teladan
+                      <h3 className="skills__name">{exp.exp2}
+                      </h3>
+                    
+                    </div>
+                  </div>
+                  
+                  <div className="skills__data">
+                    <i className="bx bx-badge-check" />
+                    <div>
+                      <h3 className="skills__name">{exp.exp3}
                       </h3>
                     
                     </div>
@@ -59,39 +88,30 @@ MANADO</h3>
                   <div className="skills__data">
                     <i className="bx bx-badge-check" />
                     <div>
-                      <h3 className="skills__name">Wilayah Kalawat 2019
+                      <h3 className="skills__name">{exp.exp8}
                       </h3>
-                    
                     </div>
-                  </div>
-                  <div className="skills__data">
-                    <i className="bx bx-badge-check" />
-                    <div>
-                      <h3 className="skills__name">Panitia Hari Hari Raya Gerejawi Jemaat 2022, Divisi Usaha Dana
-                      </h3>
-                    
-                    </div>
-                  </div>
+                  </div>   
                 </div>
                 <div className="skills__group">
                   <div className="skills__data">
                     <i className="bx bx-badge-check" />
                     <div>
-                      <h3 className="skills__name">Tim EO Kegiatan Pemuda 2023</h3>
+                      <h3 className="skills__name">{exp.exp4}</h3>
                     
                     </div>
                   </div>
                   <div className="skills__data">
                     <i className="bx bx-badge-check" />
                     <div>
-                      <h3 className="skills__name">Mini Course Revo Introduction To Digital Marketing 2023</h3>
+                      <h3 className="skills__name">{exp.exp5}</h3>
                     
                     </div>
                   </div>
                   <div className="skills__data">
                     <i className="bx bx-badge-check" />
                     <div>
-                      <h3 className="skills__name">BEM UNKLAB 2023 Divisi HUMAS (Public Relation)
+                      <h3 className="skills__name">{exp.exp6}
                       </h3>
                 
                     </div>
@@ -99,10 +119,11 @@ MANADO</h3>
                   <div className="skills__data">
                     <i className="bx bx-badge-check" />
                     <div>
-                      <h3 className="skills__name">Panitia Kegiatan Tahunan Kampus / Campus Day 2023, Divisi HUMAS
+                      <h3 className="skills__name">{exp.exp7}
                       </h3>
                     </div>
-                  </div>                   
+                    
+                  </div>                 
                 </div>
               </div>
             </div>

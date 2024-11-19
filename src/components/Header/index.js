@@ -24,12 +24,6 @@ const Header = () => {
               <span className="nav__name">Skills</span>
             </a>
           </li>
-          <li className="nav__item">
-            <a href="#contact" className="nav__link">
-              <i className="bx bx-message-square-detail nav__icon" />
-              <span className="nav__name">Contact</span>
-            </a>
-          </li>
         </ul>
       </div> 
       <i className="bx bx-moon change-theme" id="theme-button" />

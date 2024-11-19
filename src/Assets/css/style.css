@@ -419,6 +419,7 @@ body.light-theme {
   border-radius: 0.5rem;
   font-weight: var(--font-medium);
   transition: 0.4s;
+  margin-top: 10px;
 }
 
 .button:hover {
@@ -713,6 +714,7 @@ body.light-theme {
 
 .footer__container {
   padding: 2rem 0 6rem;
+  height: fit-content;
 }
 
 .footer__title,

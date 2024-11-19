@@ -2,7 +2,7 @@ const Contact = () => {
     return (
         <header className="header" id="header">
     <nav className="nav container">
-      <a href="#" className="nav__logo">Ekei</a>
+      <a href="#" className="nav__logo"></a>
       <div className="nav__menu" id="nav-menu">
         <ul className="nav__list">
           <li className="nav__item">
@@ -21,12 +21,6 @@ const Contact = () => {
             <a href="#skills" className="nav__link">
               <i className="bx bx-book-alt nav__icon" />
               <span className="nav__name">Skills</span>
-            </a>
-          </li>
-          <li className="nav__item">
-            <a href="#contact" className="nav__link">
-              <i className="bx bx-message-square-detail nav__icon" />
-              <span className="nav__name">Contact</span>
             </a>
           </li>
         </ul>
